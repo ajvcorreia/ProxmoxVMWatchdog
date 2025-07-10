@@ -1,0 +1,15 @@
+[Unit]
+Description=Proxmox VM Watchdog Monitor
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/vm_watchdog.sh
+Restart=always
+RestartSec=10
+User=root
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
